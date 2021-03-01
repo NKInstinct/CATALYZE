@@ -25,7 +25,7 @@ sce_build <- function(inputs, plotMDS = TRUE){
 
   CATALYST::pbMDS(sce,
                   by = "sample_id",
-                  color_by = "condition")
+                  color_by = "sample_id")
 
   return(sce)
 }
