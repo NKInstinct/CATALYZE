@@ -2,3 +2,5 @@
 
 export(sce_build)
 export(sce_prepare_inputs)
+export(sce_volcano)
+importFrom(rlang,.data)

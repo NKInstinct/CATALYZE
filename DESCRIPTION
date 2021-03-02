@@ -18,4 +18,9 @@ Imports:
     dplyr,
     tibble,
     forcats,
-    CATALYST
+    CATALYST,
+    ggplot2,
+    ggrepel,
+    ggpubr,
+    stringr,
+    rlang
