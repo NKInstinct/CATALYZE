@@ -9,18 +9,21 @@
 #'   EDITING THE PANEL.
 #' @param plotMDS Boolean specifying whether an MDS plot should be generated for
 #'   this sce.
+#' @param factors Character vector of factors to include in the experiment.
+#'   Defaults to "condition" for backwards compatability but all future ones
+#'   should use c("condition", "conditionCHAR").
 #'
 #' @return an SCE object ready to go into the CATALYST pipeline.
 #'
 #' @export
-sce_build <- function(inputs, plotMDS = TRUE){
+sce_build <- function(inputs, plotMDS = TRUE, factors = "condition"){
   sce <- CATALYST::prepData(inputs$fs,
                             inputs$panel,
                             inputs$md,
                             cofactor = 150,
                             md_cols = list(file = "file_name",
                                            sample = "sample_id",
-                                           factors = "condition"),
+                                           factors = factors),
                             FACS = TRUE)
 
   CATALYST::pbMDS(sce,
